@@ -1,0 +1,24 @@
+{
+  "name": "100DayChallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass clock/main.scss clock/main.css -watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nils-emil/100DayChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nils-emil/100DayChallenge/issues"
+  },
+  "homepage": "https://github.com/nils-emil/100DayChallenge#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

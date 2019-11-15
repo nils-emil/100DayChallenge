@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #5c5c5c;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clock-frame {
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.center {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock-container {
+  position: relative;
+  background-color: black;
+  z-index: -1;
+  top: 100px;
+  left: 100px;
+  height: 50%;
+  width: 50%;;
+  border-radius: 50%;
+}
+
+.container-body {
+  position: absolute;
+  text-align: center;
+}
+
+.dot-container {
+  left: 200px;
+  top: 115px;
+  height: 170px;
+  position: absolute;
+}
+
+.dot {
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #fefffd;
+    border-radius: 2px;
+  }
+}
+
+@for $i from 1 through 30 {
+  .dot-#{$i} {
+    transform: rotate((($i - 1)* 12) + deg);
+  }
+}
+
+.path {
+  fill: transparent;
+  stroke: #F85B5B;
+  stroke-width: 3;
+  transform: rotate(-90deg);
+  stroke-dasharray: 625;
+  transform-origin: center center;
+  animation: circle-animation 4s linear infinite;
+}
+
+@keyframes circle-animation {
+  0% {
+    stroke-dashoffset: 625;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg) scaleY(1);
+  }
+  50.00001% {
+    transform: rotate(-90deg) scaleY(-1);
+  }
+  100% {
+    stroke-dashoffset: 625;
+    transform: rotate(-90deg) scaleY(-1);
+  }
+}
+
+.content {
+  &-date {
+    font-size: 0.75rem;
+  }
+
+  &-time {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.heart {
+  display: inline-block;
+  font-size: 0.75rem;
+  float: left;
+
+  &-icon {
+    display: inline-block;
+    animation: heart-animation 2s ease-in-out infinite;
+    color: #F85B5B;
+  }
+}
+
+.calories {
+  display: inline-block;
+  font-size: 0.75rem;
+  float: right;
+}
+
+@keyframes heart-animation {
+  to {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  from {
+    transform: scale(1.2);
+  }
+}
+
+
+.content-inner-body {
+  width: 100%;
+  margin: auto;
+  color: white;
+}
