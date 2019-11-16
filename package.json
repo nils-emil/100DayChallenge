@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass clock/main.scss clock/main.css -watch",
+    "start": "node-sass -rw day11 -o day11",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
