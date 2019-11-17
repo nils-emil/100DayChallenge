@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass -rw day11 -o day11",
+    "start": "node-sass -rw day09 -o day09",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
